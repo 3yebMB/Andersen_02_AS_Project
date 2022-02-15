@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/global_padding"
-    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <Button
@@ -22,16 +20,18 @@
     <TextView
         android:id="@+id/show_count"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_toast"
         android:layout_marginTop="@dimen/global_padding"
         android:layout_marginBottom="@dimen/global_padding"
+        android:layout_weight="1"
         android:background="@color/yellow"
         android:gravity="center"
         android:text="@string/count_initial_value"
+        android:textAlignment="center"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/text_size_land"
-        android:textStyle="bold"
-        android:layout_weight="1" />
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/button_count"
@@ -40,7 +40,8 @@
         android:background="@color/colorPrimary"
         android:onClick="countUp"
         android:text="@string/button_label_count"
+        android:layout_below="@+id/show_count"
         android:textColor="@android:color/white"
         android:textSize="@dimen/button_text_size" />
 
-</LinearLayout>
+</RelativeLayout>
