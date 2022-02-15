@@ -1,16 +1,17 @@
 package dev.m13d.helloworld
 
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
-import dev.m13d.helloworld.databinding.ActivityMainBinding
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import dev.m13d.helloworld.databinding.ActivityMainBinding
 
 private val LOG_TAG = MainActivity::class.java.simpleName
+private const val DEFAULT_BUTTON_COLOR = "#FF6200EE"
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
 
     private var mCount = 0
 
@@ -18,7 +19,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        Log.d(LOG_TAG, "Hello World")
+
+        binding.buttonReset.setBackgroundColor(Color.GRAY)
+
     }
 
     fun showToast(view: android.view.View) {
@@ -27,7 +30,21 @@ class MainActivity : AppCompatActivity() {
 
     fun countUp(view: android.view.View) {
         mCount++
-        binding.showCount.text = mCount.toString()
+        with(binding) {
+            if (mCount == 1) buttonCount.setBackgroundColor(Color.GREEN)
+            showCount.text = mCount.toString()
+            buttonReset.isEnabled = mCount > 0
+            buttonReset.setBackgroundColor(Color.MAGENTA)
+        }
+    }
+
+    fun resetCount(view: android.view.View) {
+        mCount = 0
+        with(binding) {
+            showCount.text = mCount.toString()
+            buttonReset.setBackgroundColor(Color.GRAY)
+            buttonCount.setBackgroundColor(Color.parseColor(DEFAULT_BUTTON_COLOR))
+        }
     }
 
 }
