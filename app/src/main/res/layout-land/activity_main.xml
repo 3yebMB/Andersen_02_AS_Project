@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="8dp"
+    android:padding="@dimen/global_padding"
     tools:context=".MainActivity">
 
     <Button
@@ -16,6 +16,7 @@
         android:onClick="showToast"
         android:text="@string/button_label_toast"
         android:textColor="@android:color/white"
+        android:textSize="@dimen/button_text_size"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,10 +24,11 @@
         android:id="@+id/button_reset"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:onClick="resetCount"
         android:enabled="false"
+        android:onClick="resetCount"
         android:text="@string/reset"
         android:textColor="@android:color/white"
+        android:textSize="@dimen/button_text_size"
         app:layout_constraintBottom_toTopOf="@id/button_count"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/button_toast" />
@@ -36,13 +38,13 @@
         android:id="@+id/show_count"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#FFFF00"
+        android:background="@color/yellow"
         android:gravity="center"
         android:text="@string/count_initial_value"
         android:textColor="@color/colorPrimary"
-        android:textSize="160sp"
+        android:textSize="@dimen/text_size_default"
         android:textStyle="bold"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="@dimen/global_padding"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button_toast"
@@ -56,6 +58,7 @@
         android:onClick="countUp"
         android:text="@string/button_label_count"
         android:textColor="@android:color/white"
+        android:textSize="@dimen/button_text_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
