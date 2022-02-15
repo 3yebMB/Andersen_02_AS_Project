@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="global_padding">8dp</dimen>
+    <dimen name="text_size_default">160sp</dimen>
+    <dimen name="text_size_land">120sp</dimen>
+    <dimen name="xlarge_padding">16dp</dimen>
+    <dimen name="button_text_xlarge">60sp</dimen>
+    <dimen name="button_text_size">16sp</dimen>
+    <dimen name="text_size_xlarge">200sp</dimen>
+    <dimen name="button_width_xlarge">478dp</dimen>
+</resources>
