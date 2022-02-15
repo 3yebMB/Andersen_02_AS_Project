@@ -28,12 +28,6 @@ class MainActivity : AppCompatActivity() {
     fun countUp(view: android.view.View) {
         mCount++
         binding.showCount.text = mCount.toString()
-        binding.buttonReset?.isEnabled = mCount > 0
     }
 
-    fun resetCount(view: android.view.View) {
-        mCount = 0
-        binding.showCount.text = mCount.toString()
-        binding.buttonReset?.isEnabled = false
-    }
 }
