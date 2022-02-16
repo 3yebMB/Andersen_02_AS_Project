@@ -17,8 +17,5 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         Log.d(LOG_TAG, "Hello World")
 
-        binding.button.setOnClickListener {
-            throw Exception("I'm exception")
-        }
     }
 }

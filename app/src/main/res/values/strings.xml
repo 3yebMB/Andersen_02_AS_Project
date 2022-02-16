@@ -1,5 +1,4 @@
 <resources>
     <string name="app_name">Hello World</string>
     <string name="happy_birthday_to_andrew">Happy Birthday to Andrew</string>
-    <string name="throw_exception">Throw exception</string>
 </resources>
