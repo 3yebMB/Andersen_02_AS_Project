@@ -11,7 +11,13 @@
         android:theme="@style/Theme.TwoActivities">
         <activity
             android:name=".SecondActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Second Activity"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="dev.m13d.twoactivities.MainActivity" />
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">
