@@ -1,6 +1,7 @@
 package dev.m13d.twoactivities
 
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -32,6 +33,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.buttonMain.setOnClickListener { launchSecondActivity() }
+        if (savedInstanceState != null) {
+            if (savedInstanceState.getBoolean("reply_visible"))
+                binding.textHeaderReply.visibility = View.VISIBLE
+                binding.textMessageReply.text = savedInstanceState.getString("reply_text")
+                binding.textMessageReply.visibility = View.VISIBLE
+        }
     }
 
     override fun onStart() {
@@ -57,6 +64,13 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         Log.d(LOG_TAG, "onDestroy")
+    }
+
+    override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
+        super.onSaveInstanceState(outState, outPersistentState)
+        if (binding.textHeaderReply.visibility == View.VISIBLE)
+            outState.putBoolean("reply_visible", true)
+        outState.putString("reply_text", binding.textMessageReply.text.toString())
     }
 
     private fun launchSecondActivity() {
