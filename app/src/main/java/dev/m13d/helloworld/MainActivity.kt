@@ -1,5 +1,6 @@
 package dev.m13d.helloworld
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -10,7 +11,7 @@ private val LOG_TAG = MainActivity::class.java.simpleName
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
 
     private var mCount = 0
 
@@ -22,7 +23,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun showToast(view: android.view.View) {
-        Toast.makeText(this, R.string.toast_message, Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, SecondActivity::class.java)
+        intent.putExtra(EXTRA_MESSAGE, Message("Hello!", mCount))
+        startActivity(intent)
     }
 
     fun countUp(view: android.view.View) {
@@ -35,5 +38,9 @@ class MainActivity : AppCompatActivity() {
         mCount = 0
         binding.showCount.text = mCount.toString()
         binding.buttonReset?.isEnabled = false
+    }
+
+    companion object {
+        const val EXTRA_MESSAGE = "dev.m13d.helloworld.MESSAGE"
     }
 }
