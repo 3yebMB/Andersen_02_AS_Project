@@ -17,4 +17,5 @@
     <string name="pear">Pear</string>
     <string name="pomegranate">Pomegranate</string>
     <string name="blackberry">Blackberry</string>
+    <string name="list_of_products">Show list of products</string>
 </resources>
