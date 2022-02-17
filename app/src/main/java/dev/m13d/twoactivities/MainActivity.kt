@@ -4,7 +4,10 @@ import android.os.Bundle
 import android.os.PersistableBundle
 import android.util.Log
 import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.forEachIndexed
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import dev.m13d.twoactivities.databinding.ActivityMainBinding
 
 private val LOG_TAG = MainActivity::class.java.simpleName
@@ -13,31 +16,31 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-    private val sendMessage = registerForActivityResult(SecondActivity.Contract()) {
-        if (it != null && it != "") {
-            with(binding) {
-                textHeaderReply.visibility = View.VISIBLE
-                textMessageReply.visibility = View.VISIBLE
-                textMessageReply.text = it
+    private val setStuff = mutableSetOf<String>()
+    private val stuffLauncher = registerForActivityResult(SecondActivity.Contract()) {
+        setStuff.add(it)
+            binding.root.forEachIndexed { index, view ->
+                if (view is FloatingActionButton) return@forEachIndexed
+                if (index == setStuff.size) return@registerForActivityResult
+                if ((view as TextView).text == "") view.text = setStuff.elementAt(index)
             }
-        } else {
-            with(binding) {
-                textHeaderReply.visibility = View.INVISIBLE
-                textMessageReply.visibility = View.INVISIBLE
-            }
-        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.buttonMain.setOnClickListener { launchSecondActivity() }
-        if (savedInstanceState != null) {
-            if (savedInstanceState.getBoolean("reply_visible"))
-                binding.textHeaderReply.visibility = View.VISIBLE
-                binding.textMessageReply.text = savedInstanceState.getString("reply_text")
-                binding.textMessageReply.visibility = View.VISIBLE
+
+        restoreState(savedInstanceState)
+    }
+
+    private fun restoreState(savedInstanceState: Bundle?) {
+        val listStuff = savedInstanceState?.getStringArrayList("STUFF")
+        binding.root.forEachIndexed { index: Int, view: View ->
+            if (view is FloatingActionButton) return
+            if (index == listStuff?.size || listStuff == null) return
+            if ((view as TextView).text == "") view.text = listStuff.elementAt(index)
         }
     }
 
@@ -66,16 +69,14 @@ class MainActivity : AppCompatActivity() {
         Log.d(LOG_TAG, "onDestroy")
     }
 
-    override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
-        super.onSaveInstanceState(outState, outPersistentState)
-        if (binding.textHeaderReply.visibility == View.VISIBLE)
-            outState.putBoolean("reply_visible", true)
-        outState.putString("reply_text", binding.textMessageReply.text.toString())
+    fun launchSecondActivity(view: android.view.View) {
+        stuffLauncher.launch("")
     }
 
-    private fun launchSecondActivity() {
-        Log.d(LOG_TAG, "Button clicked!")
-        sendMessage.launch(binding.editTextMain.text.toString())
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putStringArrayList("STUFF", ArrayList(setStuff))
+        Log.e(LOG_TAG, setStuff.toString())
     }
 
 }

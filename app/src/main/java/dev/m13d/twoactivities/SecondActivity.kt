@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContract
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.forEach
 import dev.m13d.twoactivities.databinding.ActivitySecondBinding
 
 private val LOG_TAG = SecondActivity::class.java.simpleName
@@ -15,23 +16,27 @@ class SecondActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySecondBinding
 
-    private val resultIntent: Intent
-        get() = Intent().apply {
-            putExtra(EXTRA_REPLY, binding.editTextSecond.text.toString())
+    private fun resultIntent(id: Int): Intent {
+        var res: String = ""
+        when (id) {
+            R.id.button1 -> res = binding.tvElement1.text.toString()
+            R.id.button2 -> res = binding.tvElement2.text.toString()
+            R.id.button3 -> res = binding.tvElement3.text.toString()
+            R.id.button4 -> res = binding.tvElement4.text.toString()
+            R.id.button5 -> res = binding.tvElement5.text.toString()
+            R.id.button6 -> res = binding.tvElement6.text.toString()
+            R.id.button7 -> res = binding.tvElement7.text.toString()
+            R.id.button8 -> res = binding.tvElement8.text.toString()
+            R.id.button9 -> res = binding.tvElement9.text.toString()
+            R.id.button10 -> res = binding.tvElement10.text.toString()
         }
+        return Intent().putExtra(EXTRA_STUFF, res)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySecondBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        val message = intent.getStringExtra(EXTRA_INPUT)
-        binding.textMessage.text = message
-
-        if (message != "")
-            binding.textHeader.visibility = View.VISIBLE
-
-        binding.buttonSecond.setOnClickListener { onSavePressed() }
     }
 
     override fun onStart() {
@@ -59,10 +64,19 @@ class SecondActivity : AppCompatActivity() {
         Log.d(LOG_TAG, "onDestroy")
     }
 
-    private fun onSavePressed() {
-        setResult(RESULT_OK, resultIntent)
+    override fun onBackPressed() {
+        setResult(RESULT_CANCELED, resultIntent(0))
+        super.onBackPressed()
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return super.onSupportNavigateUp()
+    }
+
+    fun addProduct(view: View) {
+        setResult(RESULT_OK, resultIntent(view.id))
         finish()
-        Log.d(LOG_TAG, "End SecondActivity")
     }
 
     class Contract : ActivityResultContract<String, String>() {
@@ -71,15 +85,14 @@ class SecondActivity : AppCompatActivity() {
             Intent(context, SecondActivity::class.java).apply {
                 putExtra(EXTRA_INPUT, input)
             }
-
         override fun parseResult(resultCode: Int, intent: Intent?): String? {
             if (intent == null) return null
-            return intent.getStringExtra(EXTRA_REPLY)
+            return intent.getStringExtra(EXTRA_STUFF)
         }
     }
 
     companion object {
         const val EXTRA_INPUT = "dev.m13d.twoactivities.extra.MESSAGE"
-        const val EXTRA_REPLY = "dev.m13d.twoactivities.extra.REPLY"
+        const val EXTRA_STUFF = "dev.m13d.twoactivities.extra.STUFF"
     }
 }
