@@ -8,49 +8,214 @@
     tools:context=".SecondActivity">
 
     <TextView
-        android:id="@+id/text_header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/default_margin"
-        android:layout_marginTop="@dimen/default_margin"
-        android:text="@string/text_header"
-        android:visibility="invisible"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/text_message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/default_margin"
-        android:layout_marginTop="@dimen/default_margin"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_header" />
-
-    <Button
-        android:id="@+id/button_second"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/default_margin"
-        android:layout_marginBottom="@dimen/default_margin"
-        android:text="@string/button_second"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
-
-    <EditText
-        android:id="@+id/editText_second"
+        android:id="@+id/tv_element_1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/edit_text_default_margin"
-        android:layout_marginEnd="@dimen/edit_text_default_margin"
-        android:layout_marginBottom="@dimen/default_margin"
-        android:ems="10"
-        android:hint="@string/editText_second"
-        android:inputType="textLongMessage"
+        android:layout_margin="@dimen/default_margin"
+        android:textSize="@dimen/text_size"
+        android:text="@string/orange"
+        app:layout_constraintEnd_toStartOf="@id/button1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tv_element_2" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add"
+        android:onClick="addProduct"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_element_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_element_1" />
+
+    <TextView
+        android:id="@+id/tv_element_2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        android:textSize="@dimen/text_size"
+        android:text="@string/apple"
+        app:layout_constraintBottom_toTopOf="@id/tv_element_3"
+        app:layout_constraintEnd_toStartOf="@id/button2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_element_1" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_element_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_element_1" />
+
+    <TextView
+        android:id="@+id/tv_element_3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        android:textSize="@dimen/text_size"
+        android:text="@string/pineapple"
+        app:layout_constraintBottom_toTopOf="@id/tv_element_4"
+        app:layout_constraintEnd_toStartOf="@id/button3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_element_2" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_element_3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_element_1" />
+
+    <TextView
+        android:id="@+id/tv_element_4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        android:textSize="@dimen/text_size"
+        android:text="@string/grape"
+        app:layout_constraintBottom_toTopOf="@id/tv_element_5"
+        app:layout_constraintEnd_toStartOf="@id/button4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_element_3" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_element_4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_element_1" />
+
+    <TextView
+        android:id="@+id/tv_element_5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        android:textSize="@dimen/text_size"
+        android:text="@string/peach"
+        app:layout_constraintBottom_toTopOf="@id/tv_element_6"
+        app:layout_constraintEnd_toStartOf="@id/button5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_element_4" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_element_5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_element_1" />
+
+    <TextView
+        android:id="@+id/tv_element_6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        android:textSize="@dimen/text_size"
+        android:text="@string/lemon"
+        app:layout_constraintBottom_toTopOf="@id/tv_element_7"
+        app:layout_constraintEnd_toStartOf="@id/button6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_element_5" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_element_6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_element_1" />
+
+    <TextView
+        android:id="@+id/tv_element_7"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        android:textSize="@dimen/text_size"
+        android:text="@string/banana"
+        app:layout_constraintBottom_toTopOf="@id/tv_element_8"
+        app:layout_constraintEnd_toStartOf="@id/button7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_element_6" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_element_7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_element_1" />
+
+    <TextView
+        android:id="@+id/tv_element_8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        android:textSize="@dimen/text_size"
+        android:text="@string/pear"
+        app:layout_constraintBottom_toTopOf="@id/tv_element_9"
+        app:layout_constraintEnd_toStartOf="@id/button8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_element_7" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_element_8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_element_1" />
+
+    <TextView
+        android:id="@+id/tv_element_9"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        android:textSize="@dimen/text_size"
+        android:text="@string/pomegranate"
+        app:layout_constraintBottom_toTopOf="@id/tv_element_10"
+        app:layout_constraintEnd_toStartOf="@id/button9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_element_8" />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_element_9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_element_1" />
+
+    <TextView
+        android:id="@+id/tv_element_10"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        android:textSize="@dimen/text_size"
+        android:text="@string/blackberry"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button_second"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/button10"
+        app:layout_constraintTop_toBottomOf="@id/tv_element_9" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_element_10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_element_1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

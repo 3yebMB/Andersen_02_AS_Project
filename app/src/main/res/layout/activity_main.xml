@@ -8,50 +8,135 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/text_header_reply"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/default_margin"
-        android:layout_marginTop="@dimen/default_margin"
-        android:text="@string/text_header_reply"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textStyle="bold"
-        android:visibility="invisible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/text_message_reply"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/default_margin"
-        android:layout_marginTop="@dimen/default_margin"
-        android:visibility="invisible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_header_reply" />
-
-    <EditText
-        android:id="@+id/editText_main"
+        android:id="@+id/tv_element_1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/edit_text_default_margin"
-        android:layout_marginEnd="@dimen/edit_text_default_margin"
-        android:layout_marginBottom="@dimen/default_margin"
-        android:ems="10"
-        android:hint="@string/editText_main"
-        android:inputType="textLongMessage"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button_main"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_margin="@dimen/default_margin"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tv_element_2"
+        tools:text="element1" />
 
-    <Button
-        android:id="@+id/button_main"
+    <TextView
+        android:id="@+id/tv_element_2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/tv_element_3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_element_1"
+        tools:text="element2" />
+
+    <TextView
+        android:id="@+id/tv_element_3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/tv_element_4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_element_2"
+        tools:text="element3" />
+
+    <TextView
+        android:id="@+id/tv_element_4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/tv_element_5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_element_3"
+        tools:text="element4" />
+
+    <TextView
+        android:id="@+id/tv_element_5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/tv_element_6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_element_4"
+        tools:text="element5" />
+
+    <TextView
+        android:id="@+id/tv_element_6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/tv_element_7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_element_5"
+        tools:text="element6" />
+
+    <TextView
+        android:id="@+id/tv_element_7"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/tv_element_8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_element_6"
+        tools:text="element7" />
+
+    <TextView
+        android:id="@+id/tv_element_8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/tv_element_9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_element_7"
+        tools:text="element8" />
+
+    <TextView
+        android:id="@+id/tv_element_9"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/tv_element_10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_element_8"
+        tools:text="element9" />
+
+    <TextView
+        android:id="@+id/tv_element_10"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/fab"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_element_9"
+        tools:text="element10" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/default_margin"
-        android:layout_marginBottom="@dimen/default_margin"
-        android:text="@string/button_main"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:layout_marginBottom="@dimen/fab_margin"
+        android:elevation="@dimen/elevation"
+        android:src="@android:drawable/ic_input_add"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/list_of_products" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
