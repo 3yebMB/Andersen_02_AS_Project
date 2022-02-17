@@ -1,4 +1,4 @@
-package dev.m13d.helloworld
+package dev.m13d.challenge
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

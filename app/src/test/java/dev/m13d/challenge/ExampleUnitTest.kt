@@ -1,4 +1,4 @@
-package dev.m13d.helloworld
+package dev.m13d.challenge
 
 import org.junit.Test
 
