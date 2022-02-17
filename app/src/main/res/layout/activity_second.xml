@@ -5,13 +5,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="@dimen/default_margin"
     tools:context=".SecondActivity">
 
     <TextView
         android:id="@+id/tv_element_1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/default_margin"
         android:textSize="@dimen/text_size"
         android:text="@string/orange"
         app:layout_constraintEnd_toStartOf="@id/button1"
@@ -33,7 +33,6 @@
         android:id="@+id/tv_element_2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/default_margin"
         android:textSize="@dimen/text_size"
         android:text="@string/apple"
         app:layout_constraintBottom_toTopOf="@id/tv_element_3"
@@ -46,15 +45,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add"
+        android:onClick="addProduct"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_element_2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tv_element_1" />
+        app:layout_constraintStart_toEndOf="@id/tv_element_2" />
 
     <TextView
         android:id="@+id/tv_element_3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/default_margin"
         android:textSize="@dimen/text_size"
         android:text="@string/pineapple"
         app:layout_constraintBottom_toTopOf="@id/tv_element_4"
@@ -67,15 +66,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add"
+        android:onClick="addProduct"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_element_3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tv_element_1" />
+        app:layout_constraintStart_toEndOf="@id/tv_element_3" />
 
     <TextView
         android:id="@+id/tv_element_4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/default_margin"
         android:textSize="@dimen/text_size"
         android:text="@string/grape"
         app:layout_constraintBottom_toTopOf="@id/tv_element_5"
@@ -88,15 +87,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add"
+        android:onClick="addProduct"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_element_4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tv_element_1" />
+        app:layout_constraintStart_toEndOf="@id/tv_element_4" />
 
     <TextView
         android:id="@+id/tv_element_5"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/default_margin"
         android:textSize="@dimen/text_size"
         android:text="@string/peach"
         app:layout_constraintBottom_toTopOf="@id/tv_element_6"
@@ -109,15 +108,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add"
+        android:onClick="addProduct"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_element_5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tv_element_1" />
+        app:layout_constraintStart_toEndOf="@id/tv_element_5" />
 
     <TextView
         android:id="@+id/tv_element_6"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/default_margin"
         android:textSize="@dimen/text_size"
         android:text="@string/lemon"
         app:layout_constraintBottom_toTopOf="@id/tv_element_7"
@@ -130,15 +129,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add"
+        android:onClick="addProduct"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_element_6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tv_element_1" />
+        app:layout_constraintStart_toEndOf="@id/tv_element_6" />
 
     <TextView
         android:id="@+id/tv_element_7"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/default_margin"
         android:textSize="@dimen/text_size"
         android:text="@string/banana"
         app:layout_constraintBottom_toTopOf="@id/tv_element_8"
@@ -151,15 +150,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add"
+        android:onClick="addProduct"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_element_7"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tv_element_1" />
+        app:layout_constraintStart_toEndOf="@id/tv_element_7" />
 
     <TextView
         android:id="@+id/tv_element_8"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/default_margin"
         android:textSize="@dimen/text_size"
         android:text="@string/pear"
         app:layout_constraintBottom_toTopOf="@id/tv_element_9"
@@ -172,15 +171,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add"
+        android:onClick="addProduct"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_element_8"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tv_element_1" />
+        app:layout_constraintStart_toEndOf="@id/tv_element_8" />
 
     <TextView
         android:id="@+id/tv_element_9"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/default_margin"
         android:textSize="@dimen/text_size"
         android:text="@string/pomegranate"
         app:layout_constraintBottom_toTopOf="@id/tv_element_10"
@@ -193,15 +192,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add"
+        android:onClick="addProduct"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_element_9"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tv_element_1" />
+        app:layout_constraintStart_toEndOf="@id/tv_element_9" />
 
     <TextView
         android:id="@+id/tv_element_10"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/default_margin"
         android:textSize="@dimen/text_size"
         android:text="@string/blackberry"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -214,8 +213,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add"
+        android:onClick="addProduct"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_element_10"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tv_element_1" />
+        app:layout_constraintStart_toEndOf="@id/tv_element_10" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
