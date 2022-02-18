@@ -4,4 +4,13 @@
     <string name="count">count</string>
     <string name="edit_text_hint">This is an edit text</string>
     <string name="default_counter">0</string>
+
+    <string name="edittext_uri">http://developer.android.com</string>
+    <string name="button_uri">Open Website</string>
+
+    <string name="edittext_loc">Golden Gate Bridge</string>
+    <string name="button_loc">Open Location</string>
+
+    <string name="edittext_share">\'Twas brillig and the slithy toves</string>
+    <string name="button_share">Share This Text</string>
 </resources>
