@@ -1,7 +1,8 @@
 <resources>
-    <string name="app_name">Hello World</string>
+    <string name="app_name">Implicit Intents Receiver</string>
     <string name="happy_birthday_to_andrew">Happy Birthday to Andrew</string>
     <string name="count">count</string>
     <string name="edit_text_hint">This is an edit text</string>
     <string name="default_counter">0</string>
+    <string name="uri_label">URI:</string>
 </resources>
