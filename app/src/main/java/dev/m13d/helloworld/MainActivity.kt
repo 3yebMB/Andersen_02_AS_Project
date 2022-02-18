@@ -15,9 +15,14 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.buttonIncrease.setOnClickListener {
-            mCount++
-            binding.tvCounter.text = mCount.toString()
+        showIntent()
+    }
+
+    private fun showIntent() {
+        val uri = intent.data
+        if (uri != null) {
+            val uri_string = getString(R.string.uri_label) + uri.toString()
+            binding.tvCounter.text = uri_string
         }
     }
 
