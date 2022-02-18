@@ -18,4 +18,8 @@
     <string name="pomegranate">Pomegranate</string>
     <string name="blackberry">Blackberry</string>
     <string name="list_of_products">Show list of products</string>
+    <string name="goods">Goods</string>
+    <string name="map">Map</string>
+    <string name="edittext_loc">Golden Gate Bridge</string>
+    <string name="button_loc">Open Location</string>
 </resources>
