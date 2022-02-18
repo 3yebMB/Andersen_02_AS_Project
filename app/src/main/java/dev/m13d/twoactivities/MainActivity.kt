@@ -1,10 +1,14 @@
 package dev.m13d.twoactivities
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.forEachIndexed
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -20,7 +24,7 @@ class MainActivity : AppCompatActivity() {
     private val stuffLauncher = registerForActivityResult(SecondActivity.Contract()) {
         setStuff.add(it)
             binding.root.forEachIndexed { index, view ->
-                if (view is FloatingActionButton) return@forEachIndexed
+                if (view !is TextView) return@forEachIndexed
                 if (index == setStuff.size) return@registerForActivityResult
                 if ((view as TextView).text == "") view.text = setStuff.elementAt(index)
             }
@@ -33,6 +37,28 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         restoreState(savedInstanceState)
+
+        setListeners()
+    }
+
+    private fun setListeners() {
+        with(binding) {
+            btnGoods.setOnClickListener { stuffLauncher.launch("") }
+            btnMap.setOnClickListener { openLocation() }
+        }
+    }
+
+    private fun openLocation() {
+        val loc = binding.etMap.text.toString()
+        val address = Uri.parse("geo:0,0?q=$loc")
+        val intent = Intent(Intent.ACTION_VIEW, address)
+
+        if (intent.resolveActivity(packageManager) != null) {
+            startActivity(intent);
+        } else {
+            Toast.makeText(this, "Can't handle this intent!", Toast.LENGTH_SHORT).show()
+            Log.d("ImplicitIntents", "Can't handle this intent!")
+        }
     }
 
     private fun restoreState(savedInstanceState: Bundle?) {
@@ -67,10 +93,6 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         Log.d(LOG_TAG, "onDestroy")
-    }
-
-    fun launchSecondActivity(view: android.view.View) {
-        stuffLauncher.launch("")
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
